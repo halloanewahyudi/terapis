@@ -48,3 +48,7 @@
     P {
         line-height: 1.6;
     }
+
+    .form input, form textarea {
+        @apply p-2 rounded-lg border border-gray-200 w-full;
+    }

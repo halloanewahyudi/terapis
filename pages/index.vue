@@ -49,7 +49,7 @@
       </div>
 
     <NuxtMarquee autoFill="true" class="mb-10">
-      <div v-for="item in terapis.slice(0, terapis.length/2)" :key="item"
+      <div @click="selectTerapist(item)" v-for="item in terapis.slice(0, terapis.length/2)" :key="item"
         class=" text-center bg-white rounded-xl w-full max-w-[300px] mx-3 relative hover:shadow-2xl duration-300 group cursor-pointer">
         <div class="relative rounded-xl overflow-hidden ">
           <img :src="item.photo" alt="" class="w-full h-32 rounded-xl object-cover group-hover:scale-105 duration-300 ease-in-out">
@@ -64,7 +64,7 @@
       </div>
     </NuxtMarquee>
     <NuxtMarquee autoFill="true" direction="right">
-      <div v-for="item in terapis.slice(terapis.length - 5, terapis.length)" :key="item"
+      <div @click="selectTerapist(item)" v-for="item in terapis.slice(terapis.length - 5, terapis.length)" :key="item"
         class=" text-center bg-white rounded-xl w-full max-w-[300px] mx-3 relative hover:shadow-2xl duration-300 group cursor-pointer">
         <div class="relative rounded-xl overflow-hidden ">
           <img :src="item.photo" alt="" class="w-full h-32 rounded-xl object-cover group-hover:scale-105 duration-300 ease-in-out">
@@ -79,6 +79,11 @@
       </div>
     </NuxtMarquee>
   </section>
+  <div v-if="selectedTerapist !== null" class="fixed top-0 left-0 w-full h-full bg-primary/80 flex justify-center items-center p-10 z-50">
+    <button class="absolute top-3 right-3 z-50 text-red-500 p-2 rounded-full bg-white" @click="selectedTerapist = null"> <IconsClose /> </button>
+    <Jadwalkan :nama="selectedTerapist.nama" :lokasi="selectedTerapist.lokasi" :photo="selectedTerapist.photo" />
+   
+  </div>
 </template>
 
 <script lang="ts" setup>
@@ -106,4 +111,10 @@ const features = [
     icon: defineAsyncComponent(() => import('~/components/icons/higienis.vue'))
   }
 ]
+
+const selectedTerapist = ref(null)
+const selectTerapist = (item) => {
+   selectedTerapist.value = item
+   console.log(selectedTerapist.value)
+}
 </script>
