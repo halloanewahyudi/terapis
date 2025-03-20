@@ -79,10 +79,11 @@
       </div>
     </NuxtMarquee>
   </section>
-  <div v-if="selectedTerapist !== null" class="fixed top-0 left-0 w-full h-full bg-primary/80 flex justify-center items-center p-10 z-50">
-    <button class="absolute top-3 right-3 z-50 text-red-500 p-2 rounded-full bg-white" @click="selectedTerapist = null"> <IconsClose /> </button>
+  <div v-if="selectedTerapist !== null" class="fixed top-0 left-0 w-full h-full min-h-screen bg-primary/80 flex justify-center items-center p-10 z-50">
+    <div class="overflow-y-auto w-full max-w-[600px] mx-auto relative">
+      <button class="absolute top-3 right-3 z-50 text-red-500 p-2 rounded-full bg-white" @click="selectedTerapist = null"> <IconsClose /> </button>
     <Jadwalkan :nama="selectedTerapist.nama" :lokasi="selectedTerapist.lokasi" :photo="selectedTerapist.photo" />
-   
+    </div>
   </div>
 </template>
 

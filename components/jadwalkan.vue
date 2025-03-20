@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full max-w-[600px] rounded-xl bg-white  overflow-hidden overflow-y-auto">
+  <div class="w-full max-w-[600px] rounded-xl bg-white  overflow-hidden overflow-y-auto relative">
     <div>
       <form action="" class="form">
         <div class="p-6 lg:p-10 flex flex-col gap-2">
