@@ -3,7 +3,7 @@
     <div class="grid grid-cols-1 lg:grid-cols-2 min-h-screen items-center">
       <div class="flex justify-center items-center">
         <div class="max-w-[500px] p-6">
-          <h1 class="text-4xl lg:text-5xl mb-3 text-primary">
+          <h1 class="text-4xl lg:text-5xl mb-3 text-secondary">
             Sentuhan Profesional untuk Kesehatan dan Relaksasi Anda
           </h1>
           <p class="mb-5">
@@ -21,7 +21,7 @@
   <section class="py-20">
     <div class="container">
       <div class="max-w-screen-md mx-auto text-center mb-10">
-        <h2 class="text-3xl font-bold text-primary mb-2">Melayani Anda dengan Sepenuh Hati</h2>
+        <h2 class="text-3xl font-bold text-secondary mb-2">Melayani Anda dengan Sepenuh Hati</h2>
         <p class="text-lg ">Sentuhan Profesional untuk Kenyamanan dan Kesehatan Anda</p>
       </div>
 
@@ -44,7 +44,7 @@
   <section class="py-20 bg-light">
 
     <div class="max-w-screen-md mx-auto text-center mb-10">
-        <h2 class="text-3xl font-bold text-primary mb-2">Tim Kami</h2>
+        <h2 class="text-3xl font-bold text-secondary mb-2">Tim Kami</h2>
         <p class="text-lg ">Siap Memberikan Layanan Terbaik untuk Anda</p>
       </div>
 
@@ -85,10 +85,42 @@
     <Jadwalkan :nama="selectedTerapist.nama" :lokasi="selectedTerapist.lokasi" :photo="selectedTerapist.photo" />
     </div>
   </div>
+
+  <section class="bg-primary py-20">
+    <div class="container">
+      <h2 class="text-3xl font-bold text-white text-center mb-10"> Kata Mereka</h2>
+      <Splide :options="{
+         autoplay: true,
+         interval: 1000,
+         type: 'loop',
+         perPage: 3,
+         gap: '2rem',
+          }" aria-label="My Favorite Images">
+    <SplideSlide v-for="slide in testimony" :key="slide">
+     <div class="p-6 lg:p-10 bg-light rounded-xl shadow-2xl h-full flex flex-col">
+      <h4 class="text-2xl font-bold text-primary mb-3">{{ slide.title }}</h4>
+      <p class="mb-auto">{{ slide.description }}</p>
+      <div class="flex items-center gap-3 ">
+        <img :src="slide.photo" alt="" class="w-10 h-10 rounded-full object-cover">
+        <span class="text-sm font-medium">{{ slide.nama }}</span>
+      </div>
+     </div>
+    </SplideSlide>
+  </Splide>
+    </div>
+  </section>
+
+
 </template>
 
 <script lang="ts" setup>
 import { defineAsyncComponent } from 'vue'
+
+import { Splide, SplideSlide } from '@splidejs/vue-splide';
+import '@splidejs/splide/dist/css/splide.min.css';
+
+const {testimony} = useTestimony()
+
 const { terapis } = useTerapis()
 const features = [
   {

@@ -4,7 +4,7 @@
       <div class="flex justify-between items-center">
         <div class="flex gap-3">
           <div class="flex items-center gap-2">
-           <NuxtLink to="/"><h4>Terapis</h4> </NuxtLink> 
+           <NuxtLink to="/" class="flex gap-2 items-end"><h4 class="text-3xl font-bold text-secondary">Bale</h4> <span class="text-sm"> Massage Home Services</span> </NuxtLink> 
           </div>
         </div>
         <div class="flex gap-3">
