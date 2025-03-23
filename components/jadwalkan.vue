@@ -57,7 +57,7 @@ type Props = {
 }
 const props = defineProps<Props>()
 
-const dataForm = reactive({
+const dataForm = ref({
   nama: '',
   lokasi: '',
   tanggal: '',
@@ -68,6 +68,7 @@ const dataForm = reactive({
 })
 
 const submit = () => {
+  return dataForm.value
   console.log(dataForm)
 }
 </script>
