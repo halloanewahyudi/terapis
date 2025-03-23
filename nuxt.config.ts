@@ -11,7 +11,6 @@ export default defineNuxtConfig({
     'nuxt-marquee',
   ],
 
-
   css: ['~/assets/style.css'],
   
   tailwindcss:{

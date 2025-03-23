@@ -42,13 +42,11 @@
     </div>
   </section>
   <section class="py-20 bg-light">
-
     <div class="max-w-screen-md mx-auto text-center mb-10">
         <h2 class="text-3xl font-bold text-secondary mb-2">Tim Kami</h2>
         <p class="text-lg ">Siap Memberikan Layanan Terbaik untuk Anda</p>
       </div>
-
-    <NuxtMarquee autoFill="true" class="mb-10">
+    <NuxtMarquee autoFill="true" hoverStop="true" class="mb-10">
       <div @click="selectTerapist(item)" v-for="item in terapis.slice(0, terapis.length/2)" :key="item"
         class=" text-center bg-white rounded-xl w-full max-w-[300px] mx-3 relative hover:shadow-2xl duration-300 group cursor-pointer">
         <div class="relative rounded-xl overflow-hidden ">
@@ -57,24 +55,25 @@
         </div>
         </div>
        
-        <div class="p-4">
+        <div class="p-4 flex flex-col ">
           <h6>{{ item.nama }}</h6>
           <span class="text-sm">{{ item.lokasi }}</span>
+          <span @click="selectTerapist(item)" class="text-sm cursor-pointer text-secondary">Jadwalkan</span>
         </div>
       </div>
     </NuxtMarquee>
     <NuxtMarquee autoFill="true" direction="right">
-      <div @click="selectTerapist(item)" v-for="item in terapis.slice(terapis.length - 5, terapis.length)" :key="item"
-        class=" text-center bg-white rounded-xl w-full max-w-[300px] mx-3 relative hover:shadow-2xl duration-300 group cursor-pointer">
+      <div  v-for="item in terapis.slice(terapis.length - 5, terapis.length)" :key="item"
+        class=" text-center bg-white rounded-xl w-full max-w-[300px] mx-3 relative hover:shadow-2xl duration-300 group">
         <div class="relative rounded-xl overflow-hidden ">
           <img :src="item.photo" alt="" class="w-full h-32 rounded-xl object-cover group-hover:scale-105 duration-300 ease-in-out">
           <div class="absolute top-3 right-3 z-10 inline-block w-3 h-3 rounded-full border border-white" :class="item.status === true ? 'bg-green-500' : 'bg-red-500'">
         </div>
         </div>
-       
-        <div class="p-4">
+        <div class="p-4 flex flex-col ">
           <h6>{{ item.nama }}</h6>
           <span class="text-sm">{{ item.lokasi }}</span>
+          <span @click="selectTerapist(item)" class="text-sm cursor-pointer text-secondary">Jadwalkan</span>
         </div>
       </div>
     </NuxtMarquee>
