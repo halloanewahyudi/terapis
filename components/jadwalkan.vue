@@ -1,7 +1,7 @@
 <template>
   <div class="w-full max-w-[600px] rounded-xl bg-white  overflow-hidden overflow-y-auto relative">
     <div>
-      <form action="" class="form">
+      <form  v-if="dataForm !== null" @submit.prevent="submit" action="" class="form">
         <div class="p-6 lg:p-10 flex flex-col gap-2">
           <div>
             <label for="nama"> Nama</label>
@@ -36,12 +36,13 @@
               </div>
             </div>
             <button
-              class="btn w-full py-3 px-6 bg-primary text-white rounded-xl hover:bg-secondary duration-200">Jadwalkan</button>
+              class="btn btn-primary w-full py-3 px-6   duration-200">Jadwalkan</button>
           </div>
         </div>
-
-
       </form>
+      <div v-else>
+        {{ dataForm }}
+      </div>
     </div>
 
   </div>
@@ -65,6 +66,10 @@ const dataForm = reactive({
   alamat: ''
 
 })
+
+const submit = () => {
+  console.log(dataForm)
+}
 </script>
 
 <style></style>

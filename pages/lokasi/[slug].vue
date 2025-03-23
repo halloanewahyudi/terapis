@@ -31,14 +31,15 @@
           v-for="item in paginatedTerapis" :key="item.id">
           <div class="relative rounded-xl overflow-hidden ">
             <img :src="item.photo" alt=""
-              class="w-full h-32 rounded-xl object-cover group-hover:scale-105 duration-300 ease-in-out">
+              class="w-[200px] h-32 shrink-0 rounded-xl object-cover group-hover:scale-105 duration-300 ease-in-out ">
             <div class="absolute top-3 right-3 z-10 inline-block w-3 h-3 rounded-full border border-white"
               :class="item.status === true ? 'bg-green-500' : 'bg-red-500'">
             </div>
           </div>
-          <div class="p-4">
+          <div class="p-4 flex flex-col gap-1">
             <h6>{{ item.nama }}</h6>
             <span class="text-sm">{{ item.lokasi }}</span>
+            <span @click="selectTerapist(item)" class="text-sm cursor-pointer text-secondary">Jadwalkan</span>
           </div>
         </div>
       </div>
@@ -53,6 +54,17 @@
         <button @click="nextPage" class="btn max-w-max" :disabled="currentPage === totalPages">Next</button>
       </div>
     </div>
+
+    <div v-if="selectedTerapist !== null"
+    class="fixed top-0 left-0 w-full h-full min-h-screen bg-primary/80 flex justify-center items-center p-10 z-50">
+    <div class="overflow-y-auto w-full max-w-[600px] mx-auto relative">
+      <button class="absolute top-3 right-3 z-50 text-red-500 p-2 rounded-full bg-white"
+        @click="selectedTerapist = null">
+        <IconsClose />
+      </button>
+      <Jadwalkan :nama="selectedTerapist.nama" :lokasi="selectedTerapist.lokasi" :photo="selectedTerapist.photo" />
+    </div>
+  </div>
   </div>
 </template>
 
@@ -60,6 +72,11 @@
 
 const route = useRoute();
 const { terapis } = useTerapis();
+const selectedTerapist = ref(null)
+const selectTerapist = (item) => {
+  selectedTerapist.value = item
+  console.log(selectedTerapist.value)
+}
 
 const currentPage = ref(1);
 const perPage = ref(10);
