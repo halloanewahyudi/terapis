@@ -11,8 +11,8 @@
         </div>
       </div>
      <div class="flex items-center gap-2  text-2xl">
-       <a href="https://wa.me/62895611020302" class="hover:text-primary duration-200"> <IconsWhatsapp /> </a>
-       <a href="#" class="hover:text-primary duration-200"> <IconsInstagram /> </a>
+       <a href="https://wa.me/62895611020302" class="text-primary "> <IconsWhatsapp /> </a>
+     <!--   <a href="#" class="hover:text-primary duration-200"> <IconsInstagram /> </a> -->
      </div>
    
 
