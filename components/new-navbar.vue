@@ -6,12 +6,13 @@
         <div class="flex items-center gap-2">
           <NuxtLink to="/" class="flex gap-2 items-center">
             <h4 class="text-3xl font-bold text-secondary">Bale</h4>
-            <span class="text-xs mt-2">Massage Home Services</span>
+            <span class="text-xs mt-2 font-bold">Massage Home Services</span>
           </NuxtLink>
         </div>
       </div>
-     <div class="flex items-center gap-2  text-2xl">
-       <a href="https://wa.me/62895611020302" class="text-primary "> <IconsWhatsapp /> </a>
+     <div class="flex items-center gap-2 ">
+     <span>Kontak</span>
+       <a href="https://wa.me/62895611020302" class="text-primary text-2xl"> <IconsWhatsapp /> </a>
      <!--   <a href="#" class="hover:text-primary duration-200"> <IconsInstagram /> </a> -->
      </div>
    

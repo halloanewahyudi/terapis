@@ -16,7 +16,7 @@
         </div>
         <div class="h-full w-full">
           <img
-            src="/images/img-hero.jpg"
+            src="/images/cover.jpg"
             alt="Pijat Relaksasi"
             class="h-full w-full object-cover"
           />
