@@ -52,11 +52,11 @@ Halo Admin,
 Saya ingin melakukan pemesanan dengan detail berikut:
 🧑 Nama: ${nama}
 📞 No. Telp: ${no_telp}
-🛠️ Layanan: ${layanan}
+🙌 Layanan: ${layanan}
 ⏱️ Durasi: ${durasi}
 📍 Alamat: ${alamat}
 `;
-  const nomorAdmin = "628979134998"; // Ganti dengan nomor WhatsApp tujuan, tanpa tanda +
+  const nomorAdmin = "62895611020302"; // Ganti dengan nomor WhatsApp tujuan, tanpa tanda +
   const url = `https://wa.me/${nomorAdmin}?text=${encodeURIComponent(pesan)}`;
   window.open(url, "_blank");
 
