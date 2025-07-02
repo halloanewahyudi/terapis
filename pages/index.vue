@@ -85,6 +85,12 @@
 
 <section class="py-20 bg-light">
   <div class="container">
+    <div class="max-w-screen-md mx-auto text-center mb-10">
+          <h2 class="text-3xl font-bold text-secondary mb-2">
+            Kirim Pesan Order Anda
+          </h2>
+          <p class="text-lg">Silakan isi form dibawah ini</p>
+        </div>
     <div class="max-w-md mx-auto">
     <form-order />
     </div> 
