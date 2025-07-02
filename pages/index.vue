@@ -107,7 +107,7 @@
             gap: '2rem',
             breakpoints: {
               1200: { perPage: 3, gap: '1rem' },
-              640: { perPage: 1, gap: 0 , interval: 3000},
+              640: { perPage: 1, gap: 0 , interval: 2000, arrows: false },
             },
           }"
           aria-label="My Favorite Images"
