@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="bg-light">
+    <section class="bg-lime-100">
       <div class="grid grid-cols-1 lg:grid-cols-2 min-h-screen items-center">
         <div class="flex justify-center items-center">
           <div class="max-w-[500px] p-6">
@@ -62,7 +62,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10">
           <div v-for="item in layanan" :key="item.id">
             <div
-              class="grid grid-cols-1 lg:grid-cols-2 items-center rounded-lg overflow-hidden bg-light h-full w-full"
+              class="grid grid-cols-1 lg:grid-cols-2 items-center rounded-lg overflow-hidden bg-lime-100 h-full w-full"
             >
               <img :src="item.photo" alt="" class="w-full h-full object-cover" />
               <div>
@@ -83,7 +83,7 @@
       </div>
     </section>
 
-    <section class="py-20 bg-light">
+    <section class="py-20 bg-lime-100">
       <div class="container">
         <div class="max-w-screen-md mx-auto text-center mb-10">
           <h2 class="text-3xl font-bold text-secondary mb-2">Kirim Pesan Order Anda</h2>
@@ -113,7 +113,7 @@
           aria-label="My Favorite Images"
         >
           <SplideSlide v-for="slide in testimony" :key="slide">
-            <div class="p-6 lg:p-10 bg-light rounded-xl shadow-2xl h-full flex flex-col">
+            <div class="p-6 lg:p-10 bg-white rounded-xl shadow-2xl h-full flex flex-col">
               <h4 class="text-2xl font-bold text-secondary mb-3">{{ slide.title }}</h4>
               <p class="mb-auto">{{ slide.description }}</p>
               <div class="flex items-center gap-3">
