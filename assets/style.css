@@ -70,5 +70,5 @@
   }
 
   .input{
-    @apply bg-[#d9e5c4] w-full py-2 px-4 rounded-lg border border-gray-200 focus:outline-none  focus:ring-offset-2 focus:ring-2 focus:ring-light;
+    @apply bg-[#d9e5c4] placeholder:text-[#4A4A4A] w-full py-2 px-4 rounded-lg border border-gray-200 focus:outline-none  focus:ring-offset-2 focus:ring-2 focus:ring-light;
   }
