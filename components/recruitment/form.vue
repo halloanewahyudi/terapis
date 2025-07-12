@@ -113,7 +113,7 @@
     </form>
 
     <div
-      class="fixed top-0 left-0 w-full h-full flex flex-col items-center justify-center bg-lime-100 z-50"
+      v-if="success" class="fixed top-0 left-0 w-full h-full flex flex-col items-center justify-center bg-lime-100 z-50"
     >
       <div class="text-center">
         <Icon name="line-md:check-all" class="text-6xl text-lime-600" />
