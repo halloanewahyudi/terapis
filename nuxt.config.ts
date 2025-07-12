@@ -8,14 +8,24 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/google-fonts',
-    'nuxt-marquee',
+    '@nuxtjs/supabase',
+    '@nuxt/icon'
   ],
 
+  // config supabse url by .env
+   supabase: {
+     url: process.env.SUPABASE_URL,
+     key: process.env.SUPABASE_KEY,
+     redirect: false
+   },
+
+ 
   css: ['~/assets/style.css'],
   
   tailwindcss:{
     config: tailwindConfig
   },
+
   googleFonts: {
     display: 'swap',
     families: {
